@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #fbb53c;
+  --color-dark: #1e1e1e;
+  --color-gray: #8f8f8f;
+  --color-light-gray: #bcbcbc;
+}
+
+body {
+  min-width: 1440px;
+  font-family: 'Roboto', sans-serif;
+}

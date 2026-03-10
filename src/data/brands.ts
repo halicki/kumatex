@@ -1,0 +1,267 @@
+export interface Brand {
+  name: string;
+  slug: string;
+  description: string;
+  image: string;
+}
+
+export const brands: Brand[] = [
+  {
+    name: "Aixam",
+    slug: "aixam",
+    description: "AIXAM Kubota części zamienne Oferujemy wszystkie części zamienne do silników z samochodów AIXAM, Kubota oraz inne silniki. W ofercie naszego sklepu wszystkie części zamienne do silnika Kubota: uszczel",
+    image: "images/media/images/images/Kubota Z400 części.jpg",
+  },
+  {
+    name: "Atlas",
+    slug: "atlas",
+    description: "Naprawa maszyn ATLAS Serwis żurawi HDS marki Atlas/Atlas-Terex oraz koparek i ładowarek budowlanych tej firmy. W zakresie obsługi maszyn Atlasa oferujemy m.in.: naprawy, remonty, serwis elektroniki or",
+    image: "images/media/images/images/Naprawa%20%C5%BCurawi%20Atlas.jpeg",
+  },
+  {
+    name: "Bobcat",
+    slug: "bobcat",
+    description: "Serwis maszyn Bobcat Naprawy i remonty wszystkich typów sprzętu budowlanego i drogowego amerykańskiej marki Bobcat. Nasza firma specjalizuje się w naprawach mini i midikoparek oraz ładowarek, w tym si",
+    image: "images/media/images/images/bobcat ładowarka2.jpg",
+  },
+  {
+    name: "Casalini",
+    slug: "casalini",
+    description: "Casalini części zamienne silnika Mitsubishi Oferujemy wszystkie części zamienne  do silników z pojazdów Casalini Mitsubishi Diesel 635 cm³ - 538 cm³ (0635L – 0538L) oraz inne silniki. W ofercie naszeg",
+    image: "images/media/images/images/silnik Mitsubishi casalini części zamienne 1.jpg",
+  },
+  {
+    name: "Caterpillar",
+    slug: "caterpillar",
+    description: "Serwis silników Caterpillar CAT Serwis silników CAT z maszyn budowlanych, przemysłowych, leśnych oraz drogowych amerykańskiej marki Caterpillar. Naprawa silników CAT - wszytskie modele z maszyn budowl",
+    image: "images/media/images/images/Minikoparka CAT.JPG",
+  },
+  {
+    name: "Cummins",
+    slug: "cummins",
+    description: "Remonty silników Cummins Serwis Cummins – naprawa, remonty i przeglądy techniczne silników amerykańskiej marki Cummins, stosowanych w średnich i ciężkich maszynach budowlanych, przemysłowych oraz drog",
+    image: "images/media/images/images/Serwis Cumminsa.jpg",
+  },
+  {
+    name: "Daihatsu",
+    slug: "daihatsu",
+    description: "Naprawa silników Daihatsu Serwis, remonty i naprawy silników przemysłowych DAIHATSU DM950 i innych, pracujących w maszynach przemysłowych, leśnych, maszynach do utrzymania zieleni, maszynach budowlany",
+    image: "images/media/images/images/Serwis silników Daihatsu.JPG",
+  },
+  {
+    name: "Deutz",
+    slug: "deutz",
+    description: "Naprawa silnika DEUTZ Serwis i remonty wszystkich modeli silników spalinowych niemieckiej marki Deutz oraz MWM.  Wykonujemy zarówno kapitalne remontu silników taj marki, jak i poszczególne naprawy. Na",
+    image: "images/media/images/images/Silniki Deutz remonty.jpg",
+  },
+  {
+    name: "Effer",
+    slug: "effer",
+    description: "Serwis żurawi EFFER Serwis i remonty wszystkich typów żurawi HDS renomowanej włoskiej marki Effer. Obsługujemy zarówno najmniejsze urządzenia podnośnikowe tej marki, jak i największe żurawie specjalis",
+    image: "images/media/images/images/Autoryzowany serwis Effer.jpg",
+  },
+  {
+    name: "Fassi",
+    slug: "fassi",
+    description: "Serwis żurawi Fassi Remonty, serwis oraz UDT wszystkich modeli żurawi i dźwigów renomowanej włoskiej marki Fassi. W zakresie serwisowej i remontowej obsługi urządzeń marki Fassi, oferujemy m.in.: remo",
+    image: "images/media/images/images/Naprawa%20d%C5%BAwigu%20fassi.jpg",
+  },
+  {
+    name: "Gehl",
+    slug: "gehl",
+    description: "Serwis silników maszyn GEHL Serwis i remonty silników DIESEL z maszyn budowlanych amerykańskiej marki GEHL. Naprawa silników ładowarek i miniładowarek gąsienicowych oraz kołowych (w tym ładowarek roln",
+    image: "images/media/images/images/serwis Gehl.jpg",
+  },
+  {
+    name: "Hanix",
+    slug: "hanix",
+    description: "Serwis i naprawa silników koparek Hanix Naprawa i serwis silników Diesel z midi i minikoparek japońskiej marki Hanix. Przeprowadzamy zarówno poszczególne naprawy, obejmujące wszystkie typy uszkodzeń,",
+    image: "images/media/images/images/minikoparka%20hanix.jpg",
+  },
+  {
+    name: "Hiab",
+    slug: "hiab",
+    description: "Serwis żurawi HIAB Serwis i naprawy maszyn przeładunkowych i załadowczych renomowanej marki HIAB. W zakresie obsługi żurawi i dźwigów Hiaba oferujemy m.in. remonty kapitalne, naprawa obrotu żurawi ora",
+    image: "images/media/images/images/Serwis hiaba.jpg",
+  },
+  {
+    name: "Hino",
+    slug: "hino",
+    description: "Serwis silników Hino Świadczymy usługi serwisowe, naprawcze oraz remontowe jednostek napędowych japońskiej marki Hino (montowanych w maszynach przemysłowych między innymi takich marek jak: Kobelco, Ne",
+    image: "images/theme/image/serwis.jpg",
+  },
+  {
+    name: "Hitachi",
+    slug: "hitachi",
+    description: "Serwis silników maszyn budowalnych Hitachi Oferujemy kompleksowe usługi serwisowe silników Diesel sprzętu budowlanego japońskiej marki Hitachi (w przypadku starszych modeli – Fiat Hitachi). Mam unikal",
+    image: "images/media/images/images/koparka hitachi.jpg",
+  },
+  {
+    name: "HMF",
+    slug: "hmf",
+    description: "Naprawa żurawi HMF Serwis HMF – naprawy, remonty i serwis wszystkich typów żurawi marki HDS, zabudowywanych na samochodach dostawczych i ciężarowych, platformach kolejowych, przyczepach oraz maszyn pr",
+    image: "images/media/images/images/Serwis żurawi HMF.jpg",
+  },
+  {
+    name: "Hyundai",
+    slug: "hyundai",
+    description: "Części zamienne silnika Hyundai Oferujemy części do silnika Hyundai, który znalazł zastosowanie w maszynach budowlanych, wózkach widłowych. Na stanie naszego magazynu posiadamy setki części zamiennych",
+    image: "images/media/images/images/Wózek widłowy Hyundai części silnikowe(1).jpg",
+  },
+  {
+    name: "Ingersoll Rand",
+    slug: "ingersoll-rand",
+    description: "Serwis silników maszyn Ingersoll Rand Jeżeli masz problem ze swoją wysokoprężną jednostką napędową montowaną w maszynach drogowych i przemysłowych marki Ingresoll Rand, doskonale trafiłeś. Prowadzimy",
+    image: "images/media/images/images/Ingersoll Rand serwis.jpg",
+  },
+  {
+    name: "Iseki",
+    slug: "iseki",
+    description: "Remonty silników Iseki Serwis, remonty i naprawy silników Isuzu, Mitsubishi i Iseki z maszyn rolniczych i ogrodowych. Obsługujemy silniki z kosiarek, mini ciągników i traktorów rolniczych oraz sadowni",
+    image: "images/media/images/images/Iseki traktor części zamienne silnika.JPG",
+  },
+  {
+    name: "Iveco",
+    slug: "iveco",
+    description: "Serwis silników IVECO Serwis i remonty wszystkich typów średnich i dużych silników IVECO pracujących w samochodach ciężarowych (powyżej 3.5t), autobusach, maszynach budowlanych (Hitachi, Fiat, Kobelco",
+    image: "images/media/images/images/Naprawa silnika Iveco.gif",
+  },
+  {
+    name: "Kaeser",
+    slug: "kaeser",
+    description: "Serwis sprężarek i kompresorów Kaeser Serwis silników spalinowych z maszyn marki Kaeser. Obsługujemy wszystkie typy silników, w szczególności silniki Kubota, Yanmar, Isuzu, Deutz, Lombardini, Caterpil",
+    image: "images/media/images/images/serwis kompresowrów i sprężarek Kaeser.png",
+  },
+  {
+    name: "Kobelco",
+    slug: "kobelco",
+    description: "Serwis silników koparek Kobelco Naprawa, serwis i części zamienne do silników koparek i minikoparek japonskiej marki KOBELCO (także Fiat Kobelco). Kobelco to przede wszystkim gąsienicowe koparki oraz",
+    image: "images/media/images/images/Minikoparka%20Kobelco.jpg",
+  },
+  {
+    name: "Kramer Allrad",
+    slug: "kramer-allrad",
+    description: "Serwis silników ładowarek KRAMER Allrad Serwis i remonty silniki Diesel z maszyn niemieckiej marki Kramer/Kramer Allrad. Naprawa miniładowarek i ładowarek kołowych (czołowych), teleskopowych, wózków w",
+    image: "images/media/images/images/Kramer%20Allrad.jpg",
+  },
+  {
+    name: "Kubota",
+    slug: "kubota",
+    description: "Serwis silników i maszyn budowlanych Kubota Serwis i naprawa maszyn budowlanych i rolniczych japońskiej marki Kubota. Serwis wszystkich typów minikoparek, koparek, ładowarek i maszyn rolniczych Kubota",
+    image: "images/media/images/images/Serwis silników Kubota.jpg",
+  },
+  {
+    name: "Liebherr",
+    slug: "liebherr",
+    description: "Remonty silników Liebherr Serwis i remonty silników maszyn budowlanych i dźwigowych niemieckiej marki Liebherr. Specjalizujemy się w remontach generalnych silników przemysłowych Liebherra, ale wykonuj",
+    image: "images/theme/image/serwis.jpg",
+  },
+  {
+    name: "Loglift, Jonsered",
+    slug: "loglift-jonsered",
+    description: "Serwis żurawi LOGLIFT Remonty kapitalne, naprawy i serwis wszystkich typów żurawi i dźwigów leśnych, do drewna, do przeładunku surowców wtórnych oraz innych urządzeń wyposażonych w chwytaki. Prowadzim",
+    image: "images/media/images/images/Naprawa%20Loglift%C3%B3w.jpg",
+  },
+  {
+    name: "Microcar, Chatenet",
+    slug: "microcar-chatenet",
+    description: "Chatenet, Microcar części zamienne Yanmar Oferujemy wszystkie części zamienne  do silników z pojazdów Microcar, Chatenet Yanmar 523 cm³ oraz inne silniki. W ofercie naszego sklepu wszystkie części zam",
+    image: "images/media/images/images/Chatenet Yanmar części Microcar.jpg",
+  },
+  {
+    name: "Mitsubishi",
+    slug: "mitsubishi",
+    description: "Serwis silników Mitsubishi Remonty i naprawy wszystkich typów kompaktowych, średnich i dużych silników przemysłowych japońskiej marki Mitsubishi. Silniki te stosowane są w koparkach, ładowarkach, wózk",
+    image: "images/media/images/images/Naprawa silnika Mitsubishi.JPG",
+  },
+  {
+    name: "Nanni",
+    slug: "nanni",
+    description: "Serwis silników Nanni Kapitalne remonty i serwis marynistycznych jednostek napędowych Nanni, z silnikami Kubota. Wykonujemy ogólne naprawy silników w oparciu o najwyższej jakości części. Zakres oferow",
+    image: "images/media/images/images/Serwis silników Nanni.JPG",
+  },
+  {
+    name: "Navistar INTERNATIONAL",
+    slug: "navistar-international",
+    description: "Serwis silników Navistar International Oferujemy remonty, serwis i części silnikowe jednostek napędowych International, Harvester Company IHC Navistar oraz pokrewnych. Przeprowadzamy kompletne remonty",
+    image: "images/media/images/images/Navistar International części remont, serwis.jpg",
+  },
+  {
+    name: "New Holland",
+    slug: "new-holland",
+    description: "Remonty silników New Holland Naprawy i serwis silników przemysłowych marki New Holland, pracujących w maszynach budowlanych, rolniczych i przemysłowych. Przeprowadzamy zarówno przeglądy techniczne sil",
+    image: "images/media/images/images/Naprawa silników New Holland.JPG",
+  },
+  {
+    name: "Palfinger",
+    slug: "palfinger",
+    description: "Serwis żurawi Palfinger Remonty, naprawy i serwis wszystkich typów urządzeń i maszyn podnośnikowych marki Palfinger. W zakresie obsługi marki Palfinger wykonujemy zarówno gruntowne remonty kapitalne,",
+    image: "images/media/images/images/HDS Palfinger serwis.jpg",
+  },
+  {
+    name: "Pel-Job",
+    slug: "pel-job",
+    description: "Serwis silników minikoparek Pel-Job Serwis i naprawa silników DIESEL z koparek, minikoparek  oraz miniładowarek francuskiej marki Pel-Job (Volvo Construction Equipment). Pel Job serwis Od wielu lat za",
+    image: "images/media/images/images/Koparka Pel Job 2.jpg",
+  },
+  {
+    name: "Schaeff",
+    slug: "schaeff",
+    description: "Serwis silników Schaeff Naprawa i remonty wszystkich typów silników z maszyn budowlanych marki Schaeff/Terex-Schaeff - minikoparek i koparek, koparko-ładowarek i ładowarek kołowych. Są o silniki takic",
+    image: "images/media/images/images/Schaeff 1.JPG",
+  },
+  {
+    name: "Shibaura",
+    slug: "shibaura",
+    description: "Naprawa silników Shibaura Serwis, remonty i naprawy silników Shibaura z miniciągników, minitraktorów, maszyn ogrodniczych. Remontujemy wszystkie modele silników przemysłowych Shibaura z minitraktorów,",
+    image: "images/media/images/images/Shibaura części silnikowe z maszyn rolniczych.jpg",
+  },
+  {
+    name: "Takeuchi",
+    slug: "takeuchi",
+    description: "Serwis silników minikoparek TAKEUCHI Serwis Takeuchi - świadczymy usługi w zakresie profesjonalnych napraw i remontów wszystkich typów silników DIESEL z minikoparek, koparek  kołowych i kompaktowych ł",
+    image: "images/media/images/images/Takeuchi%20minikoparki.jpg",
+  },
+  {
+    name: "Vetus",
+    slug: "vetus",
+    description: "Serwis silników morskich Serwis i remont silników morskich wszystkich marek, m.in. VETUS, Mitsubishi VETUS, NANNI, CATERPILLAR CAT i wielu innych. W ofercie także regeneracja układów wtryskowych silni",
+    image: "images/media/images/images/Serwis vetusa.jpg",
+  },
+  {
+    name: "Volvo Penta",
+    slug: "volvo-penta",
+    description: "Naprawa silników Volvo Oferujemy wszytskie części zamienne do silników Kubota, Yanmar, Perkins, Shibaura, Cummins i Deutz montowanych w silnikach maszyn budowlanych Volvo - zadzwoń i zapytaj o części",
+    image: "images/media/images/images/Serwis%20silnik%C3%B3w%20Volvo.jpg",
+  },
+  {
+    name: "Wacker Neuson",
+    slug: "wacker-neuson",
+    description: "Serwis silników z Neuson oraz Wacker Neuson Serwis, remonty i naprawa sprzetu budowlanego niemieckich marek należących do grupy Wacker-Neuson: Neuson, Wacker-Neuson, Weideman, Kramer Allrad. Wacker Ne",
+    image: "images/media/images/images/Neuson koparka.jpg",
+  },
+  {
+    name: "Weidemann",
+    slug: "weidemann",
+    description: "Weidemann serwis, naprawa silników Nasza firma zajmuje się serwisem wszystkich rodzajów silników spalinowych maszyn międzynarodowej marki Weidemann, w których pracują silniki takie jak Mitsubishi, Deu",
+    image: "images/media/images/images/Weidemann silniki z maszyn  budowlanych.jpg",
+  },
+  {
+    name: "Yanmar",
+    slug: "yanmar",
+    description: "Części i naprawa silników Yanmar Oferujemy części zamienne, serwis i remonty silników  oraz maszyn Yanmar. Przeprowadzamy zarówno poszczególne naprawy, jak i kapitalne remonty silników tej japońskiej",
+    image: "images/media/images/images/Silniki Yanmar.jpg",
+  },
+  {
+    name: "Yanmar-silniki morskie",
+    slug: "yanmar-silniki-morskie",
+    description: "Yanmar silnik morski części zamienne W ofercie wszystkie części do marynistycznych jednostek napędowych Yanmar Diesel. Silniki Yanmar z powodzeniem stosowane są w jachtach, łodziach, barkach i kutrach",
+    image: "images/media/images/images/Yanmar -części silnika  z marynistycznych jednostek napędowych.jpg",
+  },
+  {
+    name: "Zeppelin",
+    slug: "zeppelin",
+    description: "Zeppelin Serwis silników spalinowych Serwis naprawy i remonty silników Diesel z maszyn budowlanych niemieckiej marki Zeppelin. Obsługujemy zarówno silniki koparek i ładowarek Zeppelin, jak i Cat Zeppe",
+    image: "images/media/images/images/Serwis zeppelina.jpg",
+  },
+];
