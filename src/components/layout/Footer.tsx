@@ -45,7 +45,7 @@ export function Footer() {
             <div className="space-y-5">
               <div className="flex items-start gap-3">
                 <Image
-                  src="/images/imgIcon.png"
+                  src="/images/imgIcon.svg"
                   alt=""
                   width={20}
                   height={20}
@@ -60,7 +60,7 @@ export function Footer() {
 
               <div className="flex items-start gap-3">
                 <Image
-                  src="/images/imgIcon1.png"
+                  src="/images/imgIcon1.svg"
                   alt=""
                   width={20}
                   height={20}
@@ -79,7 +79,7 @@ export function Footer() {
 
               <div className="flex items-start gap-3">
                 <Image
-                  src="/images/imgIcon2.png"
+                  src="/images/imgIcon2.svg"
                   alt=""
                   width={20}
                   height={20}

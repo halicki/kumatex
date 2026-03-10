@@ -1,7 +1,6 @@
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ContactFormSection } from "@/components/sections/ContactFormSection";
-import { equipment } from "@/data/equipment";
-import Link from "next/link";
+import { EquipmentGrid } from "@/components/sections/EquipmentGrid";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,26 +13,14 @@ export default function OsprzetPage() {
     <>
       <HeroSection
         title="Osprzęt i inne"
-        subtitle="Szeroka gama osprzętu do maszyn budowlanych, drogowych i przemysłowych."
+        subtitle="Grupa HDS-Serwis oferuje części zamienne do maszyn budowlanych, drogowych, żurawi, dźwigów i wózków widłowych."
         backgroundImage="/images/imgUnsplash75XPheqBmvA.png"
+        ctaText="Sklep"
+        ctaHref="https://geneus.pl"
+        secondaryCtaText="Skontaktuj się"
+        secondaryCtaHref="/kontakt"
       />
-      <section className="mx-auto max-w-[1440px] px-16 py-20">
-        <div className="grid grid-cols-2 gap-8">
-          {equipment.map((item) => (
-            <Link
-              key={item.slug}
-              href={`/osprzet/${item.slug}`}
-              className="group rounded border border-gray-200 p-8 transition-all hover:border-primary hover:shadow-lg"
-            >
-              <h2 className="font-[family-name:var(--font-inter)] text-2xl font-bold text-dark group-hover:text-primary transition-colors">
-                {item.title}
-              </h2>
-              <p className="mt-3 text-lg text-gray leading-relaxed">{item.description}</p>
-              <p className="mt-4 text-primary font-medium">Więcej →</p>
-            </Link>
-          ))}
-        </div>
-      </section>
+      <EquipmentGrid />
       <ContactFormSection />
     </>
   );

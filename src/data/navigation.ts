@@ -28,13 +28,12 @@ function equipmentToNavChild(item: Equipment): NavChild {
 }
 
 export const navigation: NavItem[] = [
-  { label: "HOME", href: "/" },
+  { label: "CZĘŚCI ZAMIENNE", href: "/czesci-zamienne", highlight: true },
   {
     label: "SERWIS",
     href: "/serwis",
     children: services.map(serviceToNavChild),
   },
-  { label: "CZĘŚCI ZAMIENNE", href: "/czesci-zamienne", highlight: true },
   {
     label: "OSPRZĘT I INNE",
     href: "/osprzet",

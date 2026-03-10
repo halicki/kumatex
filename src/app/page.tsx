@@ -34,14 +34,14 @@ export default function Home() {
             </h2>
             <div className="mt-8 lg:mt-10 space-y-6">
               <div className="flex items-start gap-4">
-                <Image src="/images/imgX35.png" alt="" width={40} height={40} unoptimized />
+                <Image src="/images/imgX35.svg" alt="" width={40} height={40} unoptimized />
                 <div>
                   <h3 className="font-[family-name:var(--font-inter)] text-xl font-bold">Bez przestoju w pracy</h3>
                   <p className="mt-1 text-base text-white/70">Szybkie dostawy części zamiennych</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <Image src="/images/imgX36.png" alt="" width={40} height={40} unoptimized />
+                <Image src="/images/imgX36.svg" alt="" width={40} height={40} unoptimized />
                 <div>
                   <h3 className="font-[family-name:var(--font-inter)] text-xl font-bold">Tylko oryginalne części</h3>
                   <p className="mt-1 text-base text-white/70">Gwarancja jakości i trwałości</p>

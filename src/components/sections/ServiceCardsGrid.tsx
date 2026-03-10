@@ -3,12 +3,12 @@ import Link from "next/link";
 import { services } from "@/data/services";
 
 const iconMap: Record<string, string> = {
-  excavator: "/images/imgExcavatorHeavyMachineryConstructionDiggingEarthMover.png",
-  loader: "/images/imgGroup9.png",
-  crane: "/images/imgGroup8.png",
-  forklift: "/images/imgLiftTruckHeavyMachineryWarehouseLiftingEquipment.png",
-  engine: "/images/imgWarstwa1.png",
-  compressor: "/images/imgWarstwa3.png",
+  excavator: "/images/imgExcavatorHeavyMachineryConstructionDiggingEarthMover.svg",
+  loader: "/images/imgGroup9.svg",
+  crane: "/images/imgGroup8.svg",
+  forklift: "/images/imgLiftTruckHeavyMachineryWarehouseLiftingEquipment.svg",
+  engine: "/images/imgWarstwa1.svg",
+  compressor: "/images/imgWarstwa3.svg",
 };
 
 export function ServiceCardsGrid() {

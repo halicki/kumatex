@@ -2,6 +2,8 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { GeneusPartnership } from "@/components/sections/GeneusPartnership";
 import { BrandTagsGrid } from "@/components/sections/BrandTagsGrid";
 import { ContactFormSection } from "@/components/sections/ContactFormSection";
+import { BrandSearch } from "@/components/sections/BrandSearch";
+import { RegeneratedEngines } from "@/components/sections/RegeneratedEngines";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,15 +14,19 @@ export const metadata: Metadata = {
 export default function CzesciZamiennePage() {
   return (
     <>
+      <BrandSearch />
       <HeroSection
         title="Części zamienne do maszyn"
         subtitle="Oferujemy najwyższej jakości części silnikowe, osprzęt i części eksploatacyjne do maszyn budowlanych, drogowych i wózków widłowych."
         backgroundImage="/images/imgUnsplash75XPheqBmvA.png"
         ctaText="Sklep"
         ctaHref="https://geneus.pl"
+        secondaryCtaText="Skontaktuj się"
+        secondaryCtaHref="/kontakt"
       />
       <GeneusPartnership />
       <BrandTagsGrid />
+      <RegeneratedEngines />
       <ContactFormSection />
     </>
   );

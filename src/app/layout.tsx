@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   title: "KUMATEX - Serwis maszyn budowlanych",
   description:
     "KUMATEX to firma specjalizująca się w serwisie, naprawach i sprzedaży części do maszyn budowlanych. Oferujemy profesjonalny serwis mobilny na terenie całej Polski, części zamienne do wszystkich czołowych marek oraz wynajem maszyn budowlanych.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
