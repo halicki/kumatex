@@ -27,15 +27,15 @@ export default async function FiltryBrandPage({ params }: { params: Promise<{ br
 
   return (
     <>
-      <section className="mx-auto max-w-[1440px] px-16 py-20">
-        <nav className="mb-6 flex items-center gap-2 text-sm text-gray">
+      <section className="mx-auto max-w-[1440px] px-4 md:px-8 lg:px-16 py-12 lg:py-20">
+        <nav className="mb-6 flex flex-wrap items-center gap-2 text-sm text-gray">
           <Link href="/" className="hover:text-primary">Strona Główna</Link>
           <span>/</span>
           <Link href="/osprzet" className="hover:text-primary">Osprzęt</Link>
           <span>/</span>
           <span className="text-dark">Filtry {brandData.name}</span>
         </nav>
-        <h1 className="font-[family-name:var(--font-inter)] text-4xl font-bold text-dark">
+        <h1 className="font-[family-name:var(--font-inter)] text-2xl md:text-3xl lg:text-4xl font-bold text-dark">
           Filtry {brandData.name}
         </h1>
         <p className="mt-6 max-w-3xl text-lg text-dark leading-relaxed">

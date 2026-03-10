@@ -24,9 +24,9 @@ export default async function SerwisDetailPage({ params }: { params: Promise<{ s
 
   return (
     <>
-      <section className="mx-auto max-w-[1440px] px-16 py-20">
+      <section className="mx-auto max-w-[1440px] px-4 md:px-8 lg:px-16 py-12 lg:py-20">
         <p className="text-sm font-medium uppercase text-primary font-[family-name:var(--font-inter)]">Serwis</p>
-        <h1 className="mt-2 font-[family-name:var(--font-inter)] text-4xl font-bold text-dark">
+        <h1 className="mt-2 font-[family-name:var(--font-inter)] text-2xl md:text-3xl lg:text-4xl font-bold text-dark">
           {service.title}
         </h1>
         <p className="mt-6 max-w-3xl text-lg text-dark leading-relaxed">

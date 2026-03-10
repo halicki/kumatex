@@ -29,8 +29,8 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
 
   return (
     <>
-      <section className="mx-auto max-w-[1440px] px-16 py-20">
-        <nav className="mb-6 flex items-center gap-2 text-sm text-gray">
+      <section className="mx-auto max-w-[1440px] px-4 md:px-8 lg:px-16 py-12 lg:py-20">
+        <nav className="mb-6 flex flex-wrap items-center gap-2 text-sm text-gray">
           <Link href="/" className="hover:text-primary">Strona Główna</Link>
           <span>/</span>
           <Link href="/czesci-zamienne" className="hover:text-primary">Części zamienne</Link>
@@ -38,7 +38,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
           <span className="text-dark">{brandData.name}</span>
         </nav>
 
-        <h1 className="font-[family-name:var(--font-inter)] text-4xl font-bold text-dark">
+        <h1 className="font-[family-name:var(--font-inter)] text-2xl md:text-3xl lg:text-4xl font-bold text-dark">
           {brandData.name}
         </h1>
         <p className="mt-4 max-w-3xl text-lg text-dark leading-relaxed">
@@ -50,7 +50,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
             <h2 className="mb-6 font-[family-name:var(--font-inter)] text-2xl font-bold text-dark">
               Kategorie części
             </h2>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {brandParts.map((part: { slug: string; name: string }, i: number) => (
                 <Link
                   key={part.slug}

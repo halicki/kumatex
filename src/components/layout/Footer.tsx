@@ -2,10 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 const equipmentLinks = [
-  { label: "Wynajem", href: "/osprzet/wynajem-maszyn-budowlanych" },
-  { label: "Łyżki i chwytaki", href: "/osprzet/lyzki-i-chwytaki" },
+  { label: "Wynajem", href: "/osprzet/wynajem" },
+  { label: "Łyżki i chwytaki do żurawi", href: "/osprzet/lyzki-i-chwytaki" },
   { label: "Zwolnice", href: "/osprzet/zwolnice" },
-  { label: "Filtry", href: "/filtry" },
+  { label: "Filtry do maszyn budowlanych", href: "/osprzet/filtry" },
 ];
 
 const siteMapLinks = [
@@ -30,8 +30,8 @@ export function Footer() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1440px] px-[174px] py-16 text-black">
-        <div className="grid grid-cols-3 gap-12">
+      <div className="relative z-10 mx-auto max-w-[1440px] px-4 md:px-8 lg:px-[174px] py-12 lg:py-16 text-black">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Left column - Contact info */}
           <div className="space-y-6">
             <Image
@@ -53,7 +53,7 @@ export function Footer() {
                   className="mt-0.5"
                 />
                 <div>
-                  <p className="text-xl font-bold">Adres</p>
+                  <p className="text-base lg:text-xl font-bold">Adres</p>
                   <p className="text-[15px]">Siedziba - Wiejska 3/4, Warszawa</p>
                 </div>
               </div>
@@ -68,7 +68,7 @@ export function Footer() {
                   className="mt-0.5"
                 />
                 <div>
-                  <p className="text-xl font-bold">Telefon</p>
+                  <p className="text-base lg:text-xl font-bold">Telefon</p>
                   <p className="text-[15px]">
                     <a href="tel:+48798889554" className="hover:text-primary transition-colors">
                       Biuro - +48 798 889 554
@@ -87,7 +87,7 @@ export function Footer() {
                   className="mt-0.5"
                 />
                 <div>
-                  <p className="text-xl font-bold">e-mail</p>
+                  <p className="text-base lg:text-xl font-bold">e-mail</p>
                   <p className="text-[15px]">
                     <a
                       href="mailto:info@kumatex.pl"
@@ -103,10 +103,10 @@ export function Footer() {
 
           {/* Middle column - Equipment links */}
           <div>
-            <h3 className="mb-4 border-b border-primary pb-2 text-xl font-semibold uppercase font-[family-name:var(--font-inter)]">
+            <h3 className="mb-4 border-b border-primary pb-2 text-base lg:text-xl font-semibold uppercase font-[family-name:var(--font-inter)]">
               Osprzęt i inne
             </h3>
-            <ul className="space-y-2 text-xl font-[family-name:var(--font-inter)] uppercase">
+            <ul className="space-y-2 text-base lg:text-xl font-[family-name:var(--font-inter)] uppercase">
               {equipmentLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -122,10 +122,10 @@ export function Footer() {
 
           {/* Right column - Site map */}
           <div>
-            <h3 className="mb-4 border-b border-primary pb-2 text-xl font-semibold uppercase font-[family-name:var(--font-inter)]">
+            <h3 className="mb-4 border-b border-primary pb-2 text-base lg:text-xl font-semibold uppercase font-[family-name:var(--font-inter)]">
               Mapa strony
             </h3>
-            <ul className="space-y-2 text-xl font-[family-name:var(--font-inter)] uppercase">
+            <ul className="space-y-2 text-base lg:text-xl font-[family-name:var(--font-inter)] uppercase">
               {siteMapLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -141,8 +141,8 @@ export function Footer() {
         </div>
 
         {/* Bottom bar - GENEUS partnership */}
-        <div className="mt-8 flex items-center gap-7">
-          <p className="text-base leading-relaxed">
+        <div className="mt-8 flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-7">
+          <p className="text-sm lg:text-base leading-relaxed">
             <span>Partnerem KUMATEX w dostawie części zamiennych jest GENEUS Polska – oficjalny przedstawiciel na Polskę i Europę Środkową australijsko-japońskiego koncernu SMS Diesel, jednego z największych na świecie niezależnych dystrybutorów części zamiennych do maszyn i pojazdów. Wejdź na </span>
             <a href="http://www.geneus.pl/" className="font-semibold underline hover:text-primary">www.geneus.pl</a>
             <span> i dowiedź się więcej. GENEUS POLSKA oferuje m.in. oryginalne części zamienne do silników Mitsubishi, Isuzu, Nissan, Mazda, Toyota, Perkins, Deutz, Cummins, Lombardini, Kubota, Yanmar i in.</span>
@@ -152,8 +152,8 @@ export function Footer() {
             alt="GENEUS"
             width={371}
             height={61}
+            className="shrink-0 w-[200px] lg:w-[371px] h-auto"
             unoptimized
-            className="shrink-0"
           />
         </div>
       </div>
