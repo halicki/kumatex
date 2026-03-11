@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto, Inter } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { ChangesOverlay } from "@/components/ui/ChangesOverlay";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -38,6 +39,7 @@ export default function RootLayout({
         <Navbar />
         <main className="pb-[60px] lg:pb-0">{children}</main>
         <Footer />
+        <ChangesOverlay />
       </body>
     </html>
   );
