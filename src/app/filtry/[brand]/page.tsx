@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 
-const filterBrands = ["caterpillar", "cummins", "bobcat", "kubota", "yanmar", "deutz", "perkins", "volvo-penta"];
+const filterBrands = ["caterpillar", "cummins", "bobcat", "kubota", "yanmar", "deutz", "volvo-penta"];
 
 export function generateStaticParams() {
   return filterBrands.map((b) => ({ brand: b }));

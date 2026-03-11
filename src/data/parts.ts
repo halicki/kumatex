@@ -548,7 +548,7 @@ export const parts: Part[] = [
   },
   {
     name: "Silnik CAT C1.5",
-    slug: "silnik-cat-c15",
+    slug: "silnik-cat-c1-5",
     brandSlug: "caterpillar",
     description: "Caterpillar C1-5 części zamienne Oferujemy części silnikowe Caterpillar C1.5, C1.5N z małych maszyn budowlanych, agregatów, sprężarek Caterpillar. Na stanie magazynowym posiadamy takie części jak: tło",
     image: "images/media/images/images/Caterpillar części silnikowe z walców Cat.jpg",
