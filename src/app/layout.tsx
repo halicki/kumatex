@@ -36,7 +36,7 @@ export default function RootLayout({
     <html lang="pl" className={`${roboto.variable} ${inter.variable}`}>
       <body className="antialiased">
         <Navbar />
-        <main>{children}</main>
+        <main className="pb-[60px] lg:pb-0">{children}</main>
         <Footer />
       </body>
     </html>

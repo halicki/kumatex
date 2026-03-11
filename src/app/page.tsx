@@ -58,6 +58,17 @@ export default function Home() {
             <p className="mt-8 max-w-lg text-base lg:text-lg text-white/80 leading-relaxed">
               Oferujemy usługi w zakresie profesjonalnego serwisu, napraw i remontów wszystkich typów silników Diesel z maszyn budowlanych i drogowych.
             </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <Link href="/kontakt" className="inline-flex h-12 items-center justify-center rounded bg-primary px-8 font-[family-name:var(--font-inter)] text-lg font-bold text-dark transition-colors hover:bg-primary/90">
+                Zapytaj o wycenę
+              </Link>
+              <a href="tel:+48798889554" className="inline-flex h-12 items-center justify-center gap-2 rounded border-2 border-white px-6 font-[family-name:var(--font-inter)] text-lg font-bold text-white transition-colors hover:bg-white/10">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                  <path fillRule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clipRule="evenodd" />
+                </svg>
+                Zadzwoń teraz
+              </a>
+            </div>
           </div>
           <div className="relative h-[300px] lg:h-auto lg:w-1/2">
             <Image src="/images/imgPexelsChevanon11081011.png" alt="Maszyny budowlane" fill className="object-cover" unoptimized />
