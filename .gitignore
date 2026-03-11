@@ -19,3 +19,12 @@ node_modules/
 *.tsbuildinfo
 next-env.d.ts
 .vercel
+
+.playwright-mcp/
+.claude/
+
+# Screenshots
+/*.png
+
+# Intermediate images
+images/
