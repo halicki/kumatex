@@ -1,5 +1,6 @@
 import { equipment } from "@/data/equipment";
 import { ContactFormSection } from "@/components/sections/ContactFormSection";
+import { ContentSection } from "@/components/ui/ContentSection";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -41,6 +42,8 @@ export default async function OsprzetDetailPage({ params }: { params: Promise<{ 
         <p className="mt-6 max-w-3xl text-lg text-dark leading-relaxed">
           {item.description}
         </p>
+
+        {item.content && <ContentSection content={item.content} />}
 
         {/* CTA */}
         <div className="mt-8 flex flex-col sm:flex-row gap-4">

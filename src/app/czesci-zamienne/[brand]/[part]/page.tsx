@@ -1,6 +1,7 @@
 import { brands } from "@/data/brands";
 import { parts } from "@/data/parts";
 import { ContactFormSection } from "@/components/sections/ContactFormSection";
+import { ContentSection } from "@/components/ui/ContentSection";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -13,9 +14,10 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: Promise<{ brand: string; part: string }> }): Promise<Metadata> {
   return params.then(({ brand, part }) => {
     const p = parts.find((pp) => pp.brandSlug === brand && pp.slug === part);
+    const metaDesc = p?.content?.originalText?.[0]?.slice(0, 160) || p?.description || "";
     return {
       title: p ? `${p.name} - KUMATEX` : "Części - KUMATEX",
-      description: p?.description || "",
+      description: metaDesc,
     };
   });
 }
@@ -45,6 +47,8 @@ export default async function PartPage({ params }: { params: Promise<{ brand: st
         <p className="mt-6 max-w-3xl text-lg text-dark leading-relaxed">
           {partData.description}
         </p>
+
+        {partData.content && <ContentSection content={partData.content} />}
 
         {partData.image && (
           <div className="mt-8 relative h-[250px] md:h-[400px] w-full md:w-[600px] overflow-hidden rounded">

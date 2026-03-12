@@ -1,5 +1,6 @@
 import { brands } from "@/data/brands";
 import { ContactFormSection } from "@/components/sections/ContactFormSection";
+import { ContentSection } from "@/components/ui/ContentSection";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -11,9 +12,10 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: Promise<{ brand: string }> }): Promise<Metadata> {
   return params.then(({ brand }) => {
     const b = brands.find((br) => br.slug === brand);
+    const metaDesc = b?.content?.originalText?.[0]?.slice(0, 160) || b?.description || "";
     return {
       title: b ? `${b.name} - Części zamienne - KUMATEX` : "Marka - KUMATEX",
-      description: b?.description || "",
+      description: metaDesc,
     };
   });
 }
@@ -44,6 +46,8 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
         <p className="mt-4 max-w-3xl text-lg text-dark leading-relaxed">
           {brandData.description}
         </p>
+
+        {brandData.content && <ContentSection content={brandData.content} />}
 
         {brandParts.length > 0 && (
           <div className="mt-12">

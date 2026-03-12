@@ -1,5 +1,6 @@
 import { services } from "@/data/services";
 import { ContactFormSection } from "@/components/sections/ContactFormSection";
+import { ContentSection } from "@/components/ui/ContentSection";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -41,6 +42,8 @@ export default async function SerwisDetailPage({ params }: { params: Promise<{ s
         <p className="mt-6 max-w-3xl text-lg text-dark leading-relaxed">
           {service.description}
         </p>
+
+        {service.content && <ContentSection content={service.content} />}
 
         {/* CTA */}
         <div className="mt-8 flex flex-col sm:flex-row gap-4">

@@ -1,8 +1,11 @@
+import type { ContentBlock } from "./brands";
+
 export interface Service {
   title: string;
   slug: string;
   description: string;
   icon: string;
+  content?: ContentBlock;
 }
 
 export const services: Service[] = [
