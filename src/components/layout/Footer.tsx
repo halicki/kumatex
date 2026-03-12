@@ -2,16 +2,20 @@ import Link from "next/link";
 import Image from "next/image";
 
 const equipmentLinks = [
-  { label: "Wynajem", href: "/osprzet/wynajem" },
-  { label: "Łyżki i chwytaki do żurawi", href: "/osprzet/lyzki-i-chwytaki" },
-  { label: "Zwolnice", href: "/osprzet/zwolnice" },
-  { label: "Filtry do maszyn budowlanych", href: "/osprzet/filtry" },
+  { label: "Wynajem sprzętu", href: "/wynajem-sprzetu-budowlanego" },
+  { label: "Łyżki i chwytaki", href: "/osprzet-do-maszyn/lyzki-do-koparek" },
+  { label: "Hydraulika siłowa", href: "/hydraulika-silowa" },
+  { label: "Filtry do maszyn", href: "/osprzet-do-maszyn/filtry-do-maszyn-budowlanych" },
+  { label: "Osprzęt do maszyn", href: "/osprzet-do-maszyn" },
 ];
 
 const siteMapLinks = [
   { label: "O firmie", href: "/o-firmie" },
-  { label: "Części zamienne", href: "/czesci-zamienne" },
-  { label: "Serwis", href: "/serwis" },
+  { label: "Części do maszyn", href: "/czesci-do-maszyn" },
+  { label: "Części do silników", href: "/czesci-do-silnikow" },
+  { label: "Serwis maszyn", href: "/serwis-maszyn" },
+  { label: "Maszyny budowlane", href: "/maszyny-budowlane" },
+  { label: "Poradnik", href: "/poradnik" },
   { label: "Kontakt", href: "/kontakt" },
   { label: "Polityka prywatności", href: "/polityka-prywatnosci" },
 ];
@@ -104,7 +108,7 @@ export function Footer() {
           {/* Middle column - Equipment links */}
           <div>
             <h3 className="mb-4 border-b border-primary pb-2 text-base lg:text-xl font-semibold uppercase font-[family-name:var(--font-inter)]">
-              Osprzęt i inne
+              Oferta
             </h3>
             <ul className="space-y-2 text-base lg:text-xl font-[family-name:var(--font-inter)] uppercase">
               {equipmentLinks.map((link) => (

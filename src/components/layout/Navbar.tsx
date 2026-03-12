@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { navigation, type NavChild } from "@/data/navigation";
+import { seoNavigation, type MegaMenuSection } from "@/data/seo-navigation";
 import { cn } from "@/lib/utils";
 
 function PhoneIcon({ className }: { className?: string }) {
@@ -15,35 +15,32 @@ function PhoneIcon({ className }: { className?: string }) {
   );
 }
 
-function DropdownMenu({ items }: { items: NavChild[] }) {
-  return (
-    <div className="absolute top-full left-0 mt-0 w-64 bg-white shadow-lg border border-gray-100 z-50">
-      {items.map((item) => (
-        <Link
-          key={item.href}
-          href={item.href}
-          className="block px-5 py-3 text-sm text-dark hover:bg-primary/10 hover:text-dark transition-colors"
-        >
-          {item.label}
-        </Link>
-      ))}
-    </div>
-  );
-}
+function MegaMenuPanel({ section }: { section: MegaMenuSection }) {
+  if (!section.children || section.children.length === 0) return null;
 
-function MobileSubmenu({ items, onNavigate }: { items: NavChild[]; onNavigate: () => void }) {
   return (
-    <div className="ml-4 mt-1 space-y-1 border-l-2 border-primary/30 pl-4">
-      {items.map((item) => (
-        <Link
-          key={item.href}
-          href={item.href}
-          onClick={onNavigate}
-          className="block py-2 text-base text-dark hover:text-primary transition-colors"
-        >
-          {item.label}
-        </Link>
-      ))}
+    <div className="absolute top-full left-0 right-0 w-screen bg-white shadow-lg border-t-2 border-primary z-50">
+      <div className="mx-auto max-w-[1440px] px-[60px] py-8">
+        <div className="mb-4">
+          <Link
+            href={section.href}
+            className="font-[family-name:var(--font-inter)] text-lg font-bold text-dark hover:text-primary transition-colors"
+          >
+            {section.label}
+          </Link>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-2">
+          {section.children.map((child) => (
+            <Link
+              key={child.href}
+              href={child.href}
+              className="block py-2 text-sm text-dark hover:text-primary transition-colors"
+            >
+              {child.label}
+            </Link>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
@@ -53,10 +50,25 @@ export function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileSubmenu, setMobileSubmenu] = useState<string | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const closeMobile = () => {
     setMobileMenuOpen(false);
     setMobileSubmenu(null);
+  };
+
+  useEffect(() => {
+    closeMobile();
+  }, [pathname]);
+
+  const handleMouseEnter = (href: string, hasChildren: boolean) => {
+    if (!hasChildren) return;
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setOpenDropdown(href);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => setOpenDropdown(null), 150);
   };
 
   return (
@@ -75,54 +87,52 @@ export function Navbar() {
       </div>
 
       <header className="w-full bg-white sticky top-0 z-50 shadow-sm">
-        <nav className="mx-auto flex h-16 lg:h-[100px] max-w-[1440px] items-center justify-between px-4 lg:px-[120px]">
+        <nav className="mx-auto flex h-16 lg:h-[80px] max-w-[1440px] items-center justify-between px-4 lg:px-[60px]">
           <Link href="/" className="shrink-0" onClick={closeMobile}>
             <Image
               src="/images/imgKumatexLogo2.png"
               alt="KUMATEX"
-              width={261}
-              height={40}
-              className="w-[160px] lg:w-[261px] h-auto"
+              width={200}
+              height={30}
+              className="w-[140px] lg:w-[200px] h-auto"
               unoptimized
             />
           </Link>
 
           {/* Desktop nav */}
-          <ul className="hidden lg:flex items-center gap-[25px] font-[family-name:var(--font-inter)]">
-            {navigation.map((item) => {
+          <ul className="hidden lg:flex items-center gap-0 font-[family-name:var(--font-inter)]">
+            {seoNavigation.map((item) => {
               const isActive =
                 pathname === item.href ||
                 (item.href !== "/" && pathname.startsWith(item.href));
-              const hasChildren = item.children && item.children.length > 0;
+              const hasChildren = !!(item.children && item.children.length > 0);
 
               return (
                 <li
                   key={item.href}
                   className="relative"
-                  onMouseEnter={() =>
-                    hasChildren ? setOpenDropdown(item.href) : undefined
-                  }
-                  onMouseLeave={() => setOpenDropdown(null)}
+                  onMouseEnter={() => handleMouseEnter(item.href, hasChildren)}
+                  onMouseLeave={handleMouseLeave}
                 >
                   <Link
                     href={item.href}
                     className={cn(
-                      "flex items-center gap-2.5 px-2.5 py-2.5 text-xl uppercase transition-colors",
+                      "flex items-center gap-1 px-2 xl:px-2.5 py-2.5 text-[13px] xl:text-sm uppercase transition-colors whitespace-nowrap",
                       item.highlight
-                        ? "bg-primary text-dark rounded-3xl"
+                        ? "bg-primary text-dark rounded-3xl font-bold"
                         : isActive
                           ? "text-dark font-bold"
-                          : "text-dark hover:text-dark/70"
+                          : "text-dark hover:text-primary"
                     )}
                   >
                     {item.label}
                     {hasChildren && (
-                      <span className="text-[10px] ml-0.5">▼</span>
+                      <span className="text-[9px] ml-0.5">▼</span>
                     )}
                   </Link>
 
                   {hasChildren && openDropdown === item.href && (
-                    <DropdownMenu items={item.children!} />
+                    <MegaMenuPanel section={item} />
                   )}
                 </li>
               );
@@ -152,7 +162,7 @@ export function Navbar() {
 
         {/* Mobile menu overlay */}
         {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-0 top-16 bg-white z-40 overflow-y-auto">
+          <div className="lg:hidden fixed inset-0 top-16 bg-white z-40 overflow-y-auto pb-20">
             {/* Mobile contact info at top of menu */}
             <div className="px-4 py-4 bg-dark/5 border-b border-dark/10">
               <a href="tel:+48798889554" className="flex items-center gap-3 text-dark font-bold text-lg">
@@ -164,21 +174,21 @@ export function Navbar() {
               </a>
             </div>
 
-            <ul className="px-4 py-6 space-y-1 font-[family-name:var(--font-inter)]">
-              {navigation.map((item) => {
+            <ul className="px-4 py-4 space-y-0.5 font-[family-name:var(--font-inter)]">
+              {seoNavigation.map((item) => {
                 const isActive =
                   pathname === item.href ||
                   (item.href !== "/" && pathname.startsWith(item.href));
-                const hasChildren = item.children && item.children.length > 0;
+                const hasChildren = !!(item.children && item.children.length > 0);
 
                 return (
-                  <li key={item.href}>
+                  <li key={item.href} className="border-b border-gray-100 last:border-b-0">
                     <div className="flex items-center">
                       <Link
                         href={item.href}
                         onClick={closeMobile}
                         className={cn(
-                          "flex-1 py-3 text-lg uppercase transition-colors",
+                          "flex-1 py-3 text-base uppercase transition-colors",
                           item.highlight
                             ? "text-primary font-bold"
                             : isActive
@@ -191,14 +201,25 @@ export function Navbar() {
                       {hasChildren && (
                         <button
                           onClick={() => setMobileSubmenu(mobileSubmenu === item.href ? null : item.href)}
-                          className="p-3 text-primary text-lg"
+                          className="p-3 text-primary text-lg font-bold"
                         >
                           {mobileSubmenu === item.href ? "−" : "+"}
                         </button>
                       )}
                     </div>
                     {hasChildren && mobileSubmenu === item.href && (
-                      <MobileSubmenu items={item.children!} onNavigate={closeMobile} />
+                      <div className="ml-4 mb-3 space-y-0.5 border-l-2 border-primary/30 pl-4">
+                        {item.children!.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            onClick={closeMobile}
+                            className="block py-2 text-sm text-dark hover:text-primary transition-colors"
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
                     )}
                   </li>
                 );

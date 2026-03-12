@@ -1,0 +1,96 @@
+export interface BrandMapping {
+  brandName: string;
+  brandSlug: string;
+  categorySlug: string;
+  subcategorySlug: string;
+  h1: string;
+  metaTitle: string;
+  metaDescription: string;
+  relatedCategories: string[];
+  priority: number;
+}
+
+export const brandMappings: BrandMapping[] = [
+  // Maszyny / Minikoparki
+  { brandName: "Atlas", brandSlug: "atlas", categorySlug: "maszyny-budowlane", subcategorySlug: "minikoparki", h1: "Atlas Minikoparki – Serwis, Części Zamienne", metaTitle: "Atlas Minikoparki – Serwis, Części | Kumatex", metaDescription: "Serwis minikoparek Atlas ✓ Części zamienne ✓ Naprawa silnika ✓ Hydraulika ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "czesci-do-maszyn", "hydraulika-silowa"], priority: 3 },
+  { brandName: "Bobcat", brandSlug: "bobcat", categorySlug: "maszyny-budowlane", subcategorySlug: "minikoparki", h1: "Bobcat Minikoparki – Serwis i Naprawy", metaTitle: "Bobcat Minikoparki – Serwis i Naprawy | Kumatex", metaDescription: "Serwis minikoparek Bobcat ✓ Części zamienne ✓ Naprawa silnika ✓ Hydraulika ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "czesci-do-maszyn", "hydraulika-silowa"], priority: 5 },
+  { brandName: "Kubota", brandSlug: "kubota", categorySlug: "maszyny-budowlane", subcategorySlug: "minikoparki", h1: "Kubota Minikoparki – Serwis, Części Diesel", metaTitle: "Kubota Minikoparki – Serwis, Części | Kumatex", metaDescription: "Serwis minikoparek Kubota ✓ Części do silników Diesel ✓ Regeneracja ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "czesci-do-silnikow"], priority: 5 },
+  { brandName: "Yanmar", brandSlug: "yanmar", categorySlug: "maszyny-budowlane", subcategorySlug: "minikoparki", h1: "Yanmar Minikoparki – Serwis i Części", metaTitle: "Yanmar Minikoparki – Serwis i Części | Kumatex", metaDescription: "Serwis minikoparek Yanmar ✓ Części do silników ✓ Regeneracja ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "czesci-do-silnikow"], priority: 5 },
+  { brandName: "Hitachi", brandSlug: "hitachi", categorySlug: "maszyny-budowlane", subcategorySlug: "minikoparki", h1: "Hitachi Minikoparki – Naprawy i Serwis", metaTitle: "Hitachi Minikoparki – Naprawy i Serwis | Kumatex", metaDescription: "Serwis minikoparek Hitachi ✓ Naprawa silnika ✓ Hydraulika ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "hydraulika-silowa"], priority: 4 },
+  { brandName: "Takeuchi", brandSlug: "takeuchi", categorySlug: "maszyny-budowlane", subcategorySlug: "minikoparki", h1: "Takeuchi Minikoparki – Serwis i Części", metaTitle: "Takeuchi Minikoparki – Serwis i Części | Kumatex", metaDescription: "Serwis minikoparek Takeuchi ✓ Części zamienne ✓ Naprawa silnika ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "czesci-do-maszyn"], priority: 3 },
+  { brandName: "Kobelco", brandSlug: "kobelco", categorySlug: "maszyny-budowlane", subcategorySlug: "minikoparki", h1: "Kobelco Minikoparki – Serwis i Naprawy", metaTitle: "Kobelco Minikoparki – Serwis i Naprawy | Kumatex", metaDescription: "Serwis minikoparek Kobelco ✓ Naprawa silnika ✓ Hydraulika ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "hydraulika-silowa"], priority: 3 },
+  { brandName: "Hyundai", brandSlug: "hyundai", categorySlug: "maszyny-budowlane", subcategorySlug: "minikoparki", h1: "Hyundai Minikoparki – Naprawy", metaTitle: "Hyundai Minikoparki – Naprawy | Kumatex", metaDescription: "Serwis minikoparek Hyundai ✓ Naprawa silnika ✓ Części zamienne ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "czesci-do-maszyn"], priority: 3 },
+  { brandName: "Wacker Neuson", brandSlug: "wacker-neuson", categorySlug: "maszyny-budowlane", subcategorySlug: "minikoparki", h1: "Wacker Neuson Minikoparki – Serwis", metaTitle: "Wacker Neuson Minikoparki – Serwis | Kumatex", metaDescription: "Serwis minikoparek Wacker Neuson ✓ Naprawa silnika ✓ Części zamienne ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "czesci-do-maszyn"], priority: 3 },
+  { brandName: "New Holland", brandSlug: "new-holland", categorySlug: "maszyny-budowlane", subcategorySlug: "minikoparki", h1: "New Holland Minikoparki – Serwis", metaTitle: "New Holland Minikoparki – Serwis | Kumatex", metaDescription: "Serwis minikoparek New Holland ✓ Naprawa silnika ✓ Części zamienne ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "czesci-do-maszyn"], priority: 2 },
+
+  // Maszyny / Koparki
+  { brandName: "Caterpillar", brandSlug: "caterpillar", categorySlug: "maszyny-budowlane", subcategorySlug: "koparki", h1: "Caterpillar Koparki – Serwis i Naprawy", metaTitle: "Caterpillar Koparki – Serwis i Naprawy | Kumatex", metaDescription: "Serwis koparek Caterpillar CAT ✓ Części zamienne ✓ Remonty silników ✓ Hydraulika. Zadzwoń!", relatedCategories: ["serwis-maszyn", "czesci-do-silnikow", "hydraulika-silowa"], priority: 5 },
+  { brandName: "Hitachi", brandSlug: "hitachi", categorySlug: "maszyny-budowlane", subcategorySlug: "koparki", h1: "Hitachi Koparki – Serwis i Części", metaTitle: "Hitachi Koparki – Serwis i Części | Kumatex", metaDescription: "Serwis koparek Hitachi ✓ Części zamienne ✓ Hydraulika ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "hydraulika-silowa"], priority: 5 },
+  { brandName: "Hyundai", brandSlug: "hyundai", categorySlug: "maszyny-budowlane", subcategorySlug: "koparki", h1: "Hyundai Koparki – Naprawy i Serwis", metaTitle: "Hyundai Koparki – Naprawy i Serwis | Kumatex", metaDescription: "Serwis koparek Hyundai ✓ Części zamienne ✓ Naprawa silnika ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "czesci-do-maszyn"], priority: 4 },
+  { brandName: "Komatsu", brandSlug: "komatsu", categorySlug: "maszyny-budowlane", subcategorySlug: "koparki", h1: "Komatsu Koparki – Serwis, Naprawy", metaTitle: "Komatsu Koparki – Serwis, Naprawy | Kumatex", metaDescription: "Serwis koparek Komatsu ✓ Części zamienne ✓ Remonty silników ✓ Hydraulika. Zadzwoń!", relatedCategories: ["serwis-maszyn", "czesci-do-silnikow", "hydraulika-silowa"], priority: 5 },
+  { brandName: "Liebherr", brandSlug: "liebherr", categorySlug: "maszyny-budowlane", subcategorySlug: "koparki", h1: "Liebherr Koparki – Serwis i Naprawy", metaTitle: "Liebherr Koparki – Serwis i Naprawy | Kumatex", metaDescription: "Serwis koparek Liebherr ✓ Remonty silników ✓ Hydraulika ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "hydraulika-silowa"], priority: 4 },
+  { brandName: "Takeuchi", brandSlug: "takeuchi", categorySlug: "maszyny-budowlane", subcategorySlug: "koparki", h1: "Takeuchi Koparki – Serwis i Części", metaTitle: "Takeuchi Koparki – Serwis i Części | Kumatex", metaDescription: "Serwis koparek Takeuchi ✓ Części zamienne ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "czesci-do-maszyn"], priority: 3 },
+  { brandName: "Kobelco", brandSlug: "kobelco", categorySlug: "maszyny-budowlane", subcategorySlug: "koparki", h1: "Kobelco Koparki – Naprawy", metaTitle: "Kobelco Koparki – Naprawy | Kumatex", metaDescription: "Serwis koparek Kobelco ✓ Hydraulika ✓ Naprawa silnika ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "hydraulika-silowa"], priority: 3 },
+  { brandName: "Kubota", brandSlug: "kubota", categorySlug: "maszyny-budowlane", subcategorySlug: "koparki", h1: "Kubota Koparki – Serwis i Naprawy", metaTitle: "Kubota Koparki – Serwis i Naprawy | Kumatex", metaDescription: "Serwis koparek Kubota ✓ Części do silników ✓ Regeneracja ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "czesci-do-silnikow"], priority: 4 },
+  { brandName: "New Holland", brandSlug: "new-holland", categorySlug: "maszyny-budowlane", subcategorySlug: "koparki", h1: "New Holland Koparki – Serwis", metaTitle: "New Holland Koparki – Serwis | Kumatex", metaDescription: "Serwis koparek New Holland ✓ Części zamienne ✓ Naprawa silnika ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "czesci-do-maszyn"], priority: 2 },
+  { brandName: "Zeppelin", brandSlug: "zeppelin", categorySlug: "maszyny-budowlane", subcategorySlug: "koparki", h1: "Zeppelin Koparki – Serwis i Naprawy", metaTitle: "Zeppelin Koparki – Serwis i Naprawy | Kumatex", metaDescription: "Serwis koparek Zeppelin ✓ Hydraulika ✓ Naprawa silnika ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "hydraulika-silowa"], priority: 2 },
+
+  // Maszyny / Koparko-ładowarki
+  { brandName: "Caterpillar", brandSlug: "caterpillar", categorySlug: "maszyny-budowlane", subcategorySlug: "koparko-ladowarki", h1: "Caterpillar Koparko-ładowarki – Serwis", metaTitle: "Caterpillar Koparko-ładowarki – Serwis | Kumatex", metaDescription: "Serwis koparko-ładowarek Caterpillar ✓ Części zamienne ✓ Hydraulika ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "czesci-do-silnikow", "hydraulika-silowa"], priority: 5 },
+  { brandName: "Kubota", brandSlug: "kubota", categorySlug: "maszyny-budowlane", subcategorySlug: "koparko-ladowarki", h1: "Kubota Koparko-ładowarki – Serwis", metaTitle: "Kubota Koparko-ładowarki – Serwis | Kumatex", metaDescription: "Serwis koparko-ładowarek Kubota ✓ Części do silników ✓ Regeneracja ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "czesci-do-silnikow"], priority: 4 },
+  { brandName: "Liebherr", brandSlug: "liebherr", categorySlug: "maszyny-budowlane", subcategorySlug: "koparko-ladowarki", h1: "Liebherr Koparko-ładowarki – Serwis", metaTitle: "Liebherr Koparko-ładowarki – Serwis | Kumatex", metaDescription: "Serwis koparko-ładowarek Liebherr ✓ Hydraulika ✓ Naprawa silnika ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "hydraulika-silowa"], priority: 3 },
+
+  // Maszyny / Ładowarki
+  { brandName: "Atlas", brandSlug: "atlas", categorySlug: "maszyny-budowlane", subcategorySlug: "ladowarki", h1: "Atlas Ładowarki – Serwis i Naprawy", metaTitle: "Atlas Ładowarki – Serwis i Naprawy | Kumatex", metaDescription: "Serwis ładowarek Atlas ✓ Naprawa silnika ✓ Hydraulika ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "hydraulika-silowa"], priority: 3 },
+  { brandName: "Liebherr", brandSlug: "liebherr", categorySlug: "maszyny-budowlane", subcategorySlug: "ladowarki", h1: "Liebherr Ładowarki – Serwis i Naprawy", metaTitle: "Liebherr Ładowarki – Serwis i Naprawy | Kumatex", metaDescription: "Serwis ładowarek Liebherr ✓ Remonty silników ✓ Hydraulika ✓ Mobilny serwis. Zadzwoń!", relatedCategories: ["serwis-maszyn", "hydraulika-silowa"], priority: 4 },
+
+  // Maszyny / Żurawie HDS
+  { brandName: "Palfinger", brandSlug: "palfinger", categorySlug: "maszyny-budowlane", subcategorySlug: "zurawie-hds", h1: "Palfinger HDS – Serwis i Osprzęt", metaTitle: "Palfinger HDS – Serwis i Osprzęt | Kumatex", metaDescription: "Serwis żurawi Palfinger ✓ Remonty kapitalne ✓ Przeglądy UDT ✓ Osprzęt. Zadzwoń!", relatedCategories: ["serwis-maszyn", "osprzet-do-maszyn"], priority: 5 },
+  { brandName: "Hiab", brandSlug: "hiab", categorySlug: "maszyny-budowlane", subcategorySlug: "zurawie-hds", h1: "Hiab HDS – Serwis i Naprawy", metaTitle: "Hiab HDS – Serwis i Naprawy | Kumatex", metaDescription: "Serwis żurawi Hiab ✓ Remonty kapitalne ✓ Naprawy ✓ Osprzęt. Zadzwoń!", relatedCategories: ["serwis-maszyn", "osprzet-do-maszyn"], priority: 5 },
+  { brandName: "Fassi", brandSlug: "fassi", categorySlug: "maszyny-budowlane", subcategorySlug: "zurawie-hds", h1: "Fassi HDS – Serwis i Osprzęt", metaTitle: "Fassi HDS – Serwis i Osprzęt | Kumatex", metaDescription: "Serwis żurawi Fassi ✓ Remonty kapitalne ✓ Przeglądy UDT ✓ Osprzęt. Zadzwoń!", relatedCategories: ["serwis-maszyn", "osprzet-do-maszyn"], priority: 4 },
+  { brandName: "HMF", brandSlug: "hmf", categorySlug: "maszyny-budowlane", subcategorySlug: "zurawie-hds", h1: "HMF Żurawie HDS – Serwis", metaTitle: "HMF Żurawie HDS – Serwis | Kumatex", metaDescription: "Serwis żurawi HMF ✓ Remonty ✓ Naprawy ✓ Osprzęt. Zadzwoń!", relatedCategories: ["serwis-maszyn", "osprzet-do-maszyn"], priority: 3 },
+
+  // Części do Silników
+  { brandName: "Yanmar", brandSlug: "yanmar", categorySlug: "czesci-do-silnikow", subcategorySlug: "", h1: "Części do Silników Yanmar – Tłoki, Uszczelki", metaTitle: "Części do Silników Yanmar | Kumatex", metaDescription: "Części do silników Yanmar ✓ Tłoki ✓ Uszczelki ✓ Panewki ✓ Pompy oleju ✓ Oryginalne i zamienniki. Szybka dostawa!", relatedCategories: ["serwis-maszyn", "maszyny-budowlane"], priority: 5 },
+  { brandName: "Caterpillar", brandSlug: "caterpillar", categorySlug: "czesci-do-silnikow", subcategorySlug: "", h1: "Części do Silników Caterpillar Diesel", metaTitle: "Części do Silników Caterpillar Diesel | Kumatex", metaDescription: "Części do silników Caterpillar CAT ✓ Tłoki ✓ Uszczelki ✓ Pompy ✓ Oryginalne i zamienniki. Szybka dostawa!", relatedCategories: ["serwis-maszyn", "maszyny-budowlane"], priority: 5 },
+  { brandName: "Kubota", brandSlug: "kubota", categorySlug: "czesci-do-silnikow", subcategorySlug: "", h1: "Części do Silników Kubota – Oryginalne", metaTitle: "Części do Silników Kubota – Oryginalne | Kumatex", metaDescription: "Części do silników Kubota ✓ Tłoki ✓ Uszczelki ✓ Panewki ✓ Oryginalne i zamienniki. Szybka dostawa!", relatedCategories: ["serwis-maszyn", "maszyny-budowlane"], priority: 5 },
+  { brandName: "Komatsu", brandSlug: "komatsu", categorySlug: "czesci-do-silnikow", subcategorySlug: "", h1: "Części do Silników Komatsu Diesel", metaTitle: "Części do Silników Komatsu Diesel | Kumatex", metaDescription: "Części do silników Komatsu ✓ Tłoki ✓ Uszczelki ✓ Panewki ✓ Oryginalne i zamienniki. Szybka dostawa!", relatedCategories: ["serwis-maszyn", "maszyny-budowlane"], priority: 5 },
+  { brandName: "Perkins", brandSlug: "perkins", categorySlug: "czesci-do-silnikow", subcategorySlug: "", h1: "Części do Silników Perkins Diesel", metaTitle: "Części do Silników Perkins Diesel | Kumatex", metaDescription: "Części do silników Perkins ✓ Tłoki ✓ Uszczelki ✓ Pompy ✓ Oryginalne i zamienniki. Szybka dostawa!", relatedCategories: ["serwis-maszyn"], priority: 4 },
+  { brandName: "Isuzu", brandSlug: "isuzu", categorySlug: "czesci-do-silnikow", subcategorySlug: "", h1: "Części do Silników Isuzu", metaTitle: "Części do Silników Isuzu | Kumatex", metaDescription: "Części do silników Isuzu ✓ Tłoki ✓ Uszczelki ✓ Panewki ✓ Oryginalne i zamienniki. Szybka dostawa!", relatedCategories: ["serwis-maszyn"], priority: 4 },
+  { brandName: "Cummins", brandSlug: "cummins", categorySlug: "czesci-do-silnikow", subcategorySlug: "", h1: "Części do Silników Cummins Diesel", metaTitle: "Części do Silników Cummins Diesel | Kumatex", metaDescription: "Części do silników Cummins ✓ Tłoki ✓ Uszczelki ✓ Pompy ✓ Oryginalne i zamienniki. Szybka dostawa!", relatedCategories: ["serwis-maszyn"], priority: 4 },
+  { brandName: "Deutz", brandSlug: "deutz", categorySlug: "czesci-do-silnikow", subcategorySlug: "", h1: "Części do Silników Deutz", metaTitle: "Części do Silników Deutz | Kumatex", metaDescription: "Części do silników Deutz ✓ Tłoki ✓ Uszczelki ✓ Oryginalne i zamienniki ✓ Szybka dostawa!", relatedCategories: ["serwis-maszyn"], priority: 3 },
+  { brandName: "Mitsubishi", brandSlug: "mitsubishi", categorySlug: "czesci-do-silnikow", subcategorySlug: "", h1: "Części do Silników Mitsubishi Diesel", metaTitle: "Części do Silników Mitsubishi Diesel | Kumatex", metaDescription: "Części do silników Mitsubishi ✓ Tłoki ✓ Uszczelki ✓ Oryginalne i zamienniki. Szybka dostawa!", relatedCategories: ["serwis-maszyn"], priority: 3 },
+
+  // Osprzęt
+  { brandName: "Palfinger", brandSlug: "palfinger", categorySlug: "osprzet-do-maszyn", subcategorySlug: "", h1: "Osprzęt Palfinger HDS – Sprzedaż", metaTitle: "Osprzęt Palfinger HDS – Sprzedaż | Kumatex", metaDescription: "Osprzęt do żurawi Palfinger ✓ Chwytaki ✓ Łyżki ✓ Akcesoria ✓ Oryginalne i zamienniki. Sprawdź ofertę!", relatedCategories: ["maszyny-budowlane"], priority: 4 },
+  { brandName: "Hiab", brandSlug: "hiab", categorySlug: "osprzet-do-maszyn", subcategorySlug: "", h1: "Osprzęt Hiab – Akcesoria i Części", metaTitle: "Osprzęt Hiab – Akcesoria i Części | Kumatex", metaDescription: "Osprzęt do żurawi Hiab ✓ Chwytaki ✓ Łyżki ✓ Akcesoria ✓ Oryginalne i zamienniki. Sprawdź ofertę!", relatedCategories: ["maszyny-budowlane"], priority: 4 },
+  { brandName: "Fassi", brandSlug: "fassi", categorySlug: "osprzet-do-maszyn", subcategorySlug: "", h1: "Osprzęt Fassi HDS – Sprzedaż", metaTitle: "Osprzęt Fassi HDS – Sprzedaż | Kumatex", metaDescription: "Osprzęt do żurawi Fassi ✓ Chwytaki ✓ Łyżki ✓ Akcesoria ✓ Oryginalne i zamienniki. Sprawdź ofertę!", relatedCategories: ["maszyny-budowlane"], priority: 3 },
+];
+
+export function getBrandMappingsForSubcategory(
+  categorySlug: string,
+  subcategorySlug: string
+): BrandMapping[] {
+  return brandMappings.filter(
+    (b) => b.categorySlug === categorySlug && b.subcategorySlug === subcategorySlug
+  );
+}
+
+export function getBrandMapping(
+  categorySlug: string,
+  subcategorySlug: string,
+  brandSlug: string
+): BrandMapping | undefined {
+  return brandMappings.find(
+    (b) =>
+      b.categorySlug === categorySlug &&
+      b.subcategorySlug === subcategorySlug &&
+      b.brandSlug === brandSlug
+  );
+}
+
+export function getEngineBrandMapping(brandSlug: string): BrandMapping | undefined {
+  return brandMappings.find(
+    (b) => b.categorySlug === "czesci-do-silnikow" && b.brandSlug === brandSlug
+  );
+}
