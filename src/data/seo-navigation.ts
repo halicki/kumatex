@@ -7,14 +7,10 @@ export interface MegaMenuSection {
   label: string;
   href: string;
   children?: MegaMenuChild[];
-  highlight?: boolean;
+
 }
 
 export const seoNavigation: MegaMenuSection[] = [
-  {
-    label: "Strona Główna",
-    href: "/",
-  },
   {
     label: "Maszyny Budowlane",
     href: "/maszyny-budowlane",
@@ -42,9 +38,9 @@ export const seoNavigation: MegaMenuSection[] = [
     ],
   },
   {
-    label: "Części do Maszyn",
+    label: "Części Maszyn",
     href: "/czesci-do-maszyn",
-    highlight: true,
+
     children: [
       { label: "Części do minikoparek", href: "/czesci-do-maszyn/minikoparki" },
       { label: "Części do koparek", href: "/czesci-do-maszyn/koparki" },
@@ -54,7 +50,7 @@ export const seoNavigation: MegaMenuSection[] = [
     ],
   },
   {
-    label: "Części do Silników",
+    label: "Części Silników",
     href: "/czesci-do-silnikow",
     children: [
       { label: "Tłoki do silników", href: "/czesci-do-silnikow/tloki" },
@@ -78,7 +74,7 @@ export const seoNavigation: MegaMenuSection[] = [
     ],
   },
   {
-    label: "Osprzęt do Maszyn",
+    label: "Osprzęt",
     href: "/osprzet-do-maszyn",
     children: [
       { label: "Filtry do maszyn budowlanych", href: "/osprzet-do-maszyn/filtry-do-maszyn-budowlanych" },
@@ -91,7 +87,7 @@ export const seoNavigation: MegaMenuSection[] = [
     ],
   },
   {
-    label: "Wynajem Sprzętu",
+    label: "Wynajem",
     href: "/wynajem-sprzetu-budowlanego",
     children: [
       { label: "Wynajem mini żurawi", href: "/wynajem-sprzetu-budowlanego/minizurawie" },

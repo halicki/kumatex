@@ -15,12 +15,24 @@ function PhoneIcon({ className }: { className?: string }) {
   );
 }
 
-function MegaMenuPanel({ section }: { section: MegaMenuSection }) {
+function MegaMenuPanel({
+  section,
+  onMouseEnter,
+  onMouseLeave,
+}: {
+  section: MegaMenuSection;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
+}) {
   if (!section.children || section.children.length === 0) return null;
 
   return (
-    <div className="absolute top-full left-0 right-0 w-screen bg-white shadow-lg border-t-2 border-primary z-50">
-      <div className="mx-auto max-w-[1440px] px-[60px] py-8">
+    <div
+      className="bg-white rounded-b-lg shadow-xl mx-auto max-w-4xl w-full"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      <div className="px-10 py-8">
         <div className="mb-4">
           <Link
             href={section.href}
@@ -29,7 +41,7 @@ function MegaMenuPanel({ section }: { section: MegaMenuSection }) {
             {section.label}
           </Link>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-2">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-2">
           {section.children.map((child) => (
             <Link
               key={child.href}
@@ -61,6 +73,11 @@ export function Navbar() {
     closeMobile();
   }, [pathname]);
 
+  useEffect(() => {
+    document.body.style.overflow = openDropdown ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [openDropdown]);
+
   const handleMouseEnter = (href: string, hasChildren: boolean) => {
     if (!hasChildren) return;
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -86,7 +103,7 @@ export function Navbar() {
         </div>
       </div>
 
-      <header className="w-full bg-white sticky top-0 z-50 shadow-sm">
+      <header className="w-full bg-white sticky top-0 z-50 shadow-sm relative">
         <nav className="mx-auto flex h-16 lg:h-[80px] max-w-[1440px] items-center justify-between px-4 lg:px-[60px]">
           <Link href="/" className="shrink-0" onClick={closeMobile}>
             <Image
@@ -110,19 +127,16 @@ export function Navbar() {
               return (
                 <li
                   key={item.href}
-                  className="relative"
                   onMouseEnter={() => handleMouseEnter(item.href, hasChildren)}
                   onMouseLeave={handleMouseLeave}
                 >
                   <Link
                     href={item.href}
                     className={cn(
-                      "flex items-center gap-1 px-2 xl:px-2.5 py-2.5 text-[13px] xl:text-sm uppercase transition-colors whitespace-nowrap",
-                      item.highlight
-                        ? "bg-primary text-dark rounded-3xl font-bold"
-                        : isActive
-                          ? "text-dark font-bold"
-                          : "text-dark hover:text-primary"
+                      "flex items-center gap-1 px-1.5 xl:px-2 py-2.5 text-[11px] xl:text-[13px] uppercase transition-colors whitespace-nowrap",
+                      isActive
+                        ? "text-dark font-bold"
+                        : "text-dark hover:text-primary"
                     )}
                   >
                     {item.label}
@@ -130,10 +144,6 @@ export function Navbar() {
                       <span className="text-[9px] ml-0.5">▼</span>
                     )}
                   </Link>
-
-                  {hasChildren && openDropdown === item.href && (
-                    <MegaMenuPanel section={item} />
-                  )}
                 </li>
               );
             })}
@@ -159,6 +169,24 @@ export function Navbar() {
             </button>
           </div>
         </nav>
+
+        {/* Desktop mega menu panel */}
+        {openDropdown && (() => {
+          const section = seoNavigation.find(s => s.href === openDropdown);
+          if (!section?.children?.length) return null;
+          return (
+            <>
+              <div className="fixed inset-0 bg-black/20 z-40" onMouseEnter={handleMouseLeave} />
+              <div className="absolute left-0 right-0 top-full z-50 flex justify-center px-[60px]">
+                <MegaMenuPanel
+                  section={section}
+                  onMouseEnter={() => { if (timeoutRef.current) clearTimeout(timeoutRef.current); }}
+                  onMouseLeave={handleMouseLeave}
+                />
+              </div>
+            </>
+          );
+        })()}
 
         {/* Mobile menu overlay */}
         {mobileMenuOpen && (
@@ -189,11 +217,9 @@ export function Navbar() {
                         onClick={closeMobile}
                         className={cn(
                           "flex-1 py-3 text-base uppercase transition-colors",
-                          item.highlight
-                            ? "text-primary font-bold"
-                            : isActive
-                              ? "text-dark font-bold"
-                              : "text-dark"
+                          isActive
+                            ? "text-dark font-bold"
+                            : "text-dark"
                         )}
                       >
                         {item.label}
